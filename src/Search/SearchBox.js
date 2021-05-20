@@ -3,8 +3,8 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 
 import React from 'react'
 
-const SearchBox = () => {
-    const top100Films = [
+const SearchBox = (props) => {
+    const parameters = [
         { title: 'Capital Gains Rate' },
         { title: 'Corporate Tax Rate' },
         { title: 'Qualified Dividends Rate' },
@@ -13,15 +13,40 @@ const SearchBox = () => {
         { title: 'Estate Tax' }
     ];
 
+    const isName = () => {
+        const name = props.name;
+        if (name === 'Name') {
+            return (
+                <div>
+                    <Autocomplete
+                        id="combo-box-demo"
+                        options={parameters}
+                        getOptionLabel={(option) => option.title}
+                        style={{ width: 300 }}
+                        renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
+                    />
+                </div>
+            )
+        }
+        else {
+            return (
+                <div>
+                    <input />
+                </div>
+            )
+        }
+    }
+
     return (
         <div>
-            <Autocomplete
+            {isName()}
+            {/* <Autocomplete
                 id="combo-box-demo"
-                options={top100Films}
+                options={parameters}
                 getOptionLabel={(option) => option.title}
                 style={{ width: 300 }}
                 renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
-            />
+            /> */}
         </div>
     )
 }

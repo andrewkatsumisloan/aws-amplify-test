@@ -17,29 +17,46 @@ function App() {
         </p>
       </header>
       <form>
+        <label> Parameter Name:  </label>
         <Box
           display="flex"
           justifyContent="center"
           alignItems="center"
           minHeight="1vh"
         >
-          <SearchBox className='searchbox' />
+          <SearchBox className='searchbox' name='Name' />
         </Box>
-        <label> Parameter Name:  </label>
-        <input />
         <br />
+
         <label> Parameter Value:  </label>
-        <input />
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          minHeight="1vh"
+        >
+          <SearchBox className='searchbox' name='Value' />
+        </Box>
         <br />
+
         <label> Year:  </label>
-        <input />
-        <Button value='Add New Entry'> </Button>
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          minHeight="1vh"
+        >
+          <SearchBox className='searchbox' name='Year' />
+        </Box>
       </form>
+
       <form>
         <label> Subsample: </label>
         <input type="checkbox" />
       </form>
+
       <div className='buttons'>
+        <Button value='Add Parameter'> </Button>
         <Button value='Clear Parameters'> </Button>
         <Button value='Run Single-Year Model'> </Button>
         <Button value='Terminate'> </Button>
