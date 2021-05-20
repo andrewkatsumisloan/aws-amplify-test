@@ -7,3 +7,9 @@
   margin: auto;
   background-color: aliceblue;
 }
+
+.table {
+  margin: auto;
+  width: 10%;
+  border: 1px black;
+}

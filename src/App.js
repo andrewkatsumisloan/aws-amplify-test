@@ -1,11 +1,16 @@
 import './App.css';
 import logo from './taxfoundationlogo.png'
 import Button from './Buttons/Button.js'
-import SearchBox from './Search/SearchBox.js'
-import Box from "@material-ui/core/Box";
+import InputField from './Search/InputField.js'
 
 
-function App() {
+const App = () => {
+
+  const submitHandler = () => {
+
+    console.log('Submit Handler Test')
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,37 +22,24 @@ function App() {
         </p>
       </header>
       <form>
-        <label> Parameter Name:  </label>
-        <Box
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          minHeight="1vh"
-        >
-          <SearchBox className='searchbox' name='Name' />
-        </Box>
-        <br />
+        <div className='table'>
+          <table >
+            <tr>
+              <InputField label='Parameter Name:' name='Name'> </InputField>
+            </tr>
+            <br></br>
 
-        <label> Parameter Value:  </label>
-        <Box
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          minHeight="1vh"
-        >
-          <SearchBox className='searchbox' name='Value' />
-        </Box>
-        <br />
+            <tr>
+              <InputField label='Parameter Value:' name='Value'> </InputField>
+            </tr>
+            <br></br>
 
-        <label> Year:  </label>
-        <Box
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          minHeight="1vh"
-        >
-          <SearchBox className='searchbox' name='Year' />
-        </Box>
+            <tr>
+              <InputField label='Year:' name='Year'> </InputField>
+            </tr>
+            <br></br>
+          </table>
+        </div>
       </form>
 
       <form>
@@ -56,12 +48,15 @@ function App() {
       </form>
 
       <div className='buttons'>
-        <Button value='Add Parameter'> </Button>
+        <Button
+          value='Add Parameter'
+          onClick={submitHandler}>
+        </Button>
         <Button value='Clear Parameters'> </Button>
         <Button value='Run Single-Year Model'> </Button>
         <Button value='Terminate'> </Button>
       </div>
-    </div>
+    </div >
   );
 }
 

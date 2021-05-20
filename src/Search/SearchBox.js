@@ -13,6 +13,8 @@ const SearchBox = (props) => {
         { title: 'Estate Tax' }
     ];
 
+
+
     const isName = () => {
         const name = props.name;
         if (name === 'Name') {
@@ -40,13 +42,6 @@ const SearchBox = (props) => {
     return (
         <div>
             {isName()}
-            {/* <Autocomplete
-                id="combo-box-demo"
-                options={parameters}
-                getOptionLabel={(option) => option.title}
-                style={{ width: 300 }}
-                renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
-            /> */}
         </div>
     )
 }
